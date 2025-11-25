@@ -46,6 +46,11 @@ Component of the flow includes:
 - Chat input 
 - Chat output
 
+5. Add values to 3 global connection variables
+
+6. Click on `Playgrounf1 to try running flow on Langflow
+
+
 ### Langlfow API
 The API tool you used to connect to Watsonx Orchestrate agent is provided from the prebuilt Langflow flow on cloud. However, if you want to adjust the flow tool and use your own API, you can access them here:
 
