@@ -57,7 +57,8 @@ Component of the flow includes:
 - Chat input 
 - Chat output
 
-5. Add values to 3 global connection variables
+5. Go to `Setting`, Add values to 3 global connection variables
+![alt text](image.png)
 
 6. Click on `Playground` on the top right to try running flow on Langflow
 
