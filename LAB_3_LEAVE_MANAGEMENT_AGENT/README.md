@@ -4,26 +4,37 @@ first, we will connect to the Langflow agent using OpenAPI
 
 
 ## STEPS
-1. Open watsonx Oreschestrate `Agent Builder` page
-2. Srcoll down to `Tools` session
-![alt text](images/image-7.png)
+we will connect to the Langlfow agent using OpenAPI through python.
+You can choose to Set up connection for the tool using UI or ADK.
 
-3. select OpenAPI tools
-![alt text](images/image-8.png)
+#### set up connection through UI
 
-4. choose the `openapi_spec.ymal` file in this folder
-![alt text](images/image-5.png)
+1. Create new connection name `langflow_secret`, choose tye `Key value`
 
-5. create new connection name `Authorization`, choose tye `Barear Token`
-![alt text](images/image.png)
-![alt text](images/image-au.png)
+    ...
 
-for value, put in the code recieved through your email. It should be something like
+
+#### set up connection through ADK
+
+1. Create .env file and add the following value to the file (You will recieve this through email)
+    ```
+    ASTRA_TOKEN=AstraCS:oCfnb.....
+    ORG_ID=cfe0f....
+    ```
+2. run the following command in `LAB_3_LEAVE_MANAGEMENT_AGENT_3` folder
+    ```
+    bash set_connection.sh
+    ```
+
+#### Import agent and tool
+
+After set up connection, use the following ADK command to import Langflow tools:
 ```
-Bearer AstraCS:YoZm...
+bash import-all.sh
 ```
+the agent should pop up on your watsonx.Orchestrate Agent builder page.
 
-6. use the following questions to test the agent
+use the following questions to test the agent
 - give me leave balance of EMP001
 - give me leave balance of EMP002
 - give me leave balance of EMP003
@@ -48,7 +59,7 @@ Component of the flow includes:
 
 5. Add values to 3 global connection variables
 
-6. Click on `Playgrounf1 to try running flow on Langflow
+6. Click on `Playground` on the top right to try running flow on Langflow
 
 
 ### Langlfow API

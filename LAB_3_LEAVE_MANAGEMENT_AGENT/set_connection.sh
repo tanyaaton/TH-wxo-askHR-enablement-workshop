@@ -5,10 +5,10 @@ orchestrate connections configure -a langflow_secret --env live -t team -k key_v
 orchestrate connections set-credentials \
   -a langflow_secret \
   --env draft \
-  -e application_token=<YOUR_ASTRA_TOKEN \
-  -e organization_id=<YOUR_ORG_ID>
+  -e application_token=$ASTRA_TOKEN \
+  -e organization_id=$ORG_ID
 orchestrate connections set-credentials \
   -a langflow_secret \
   --env live \
-  -e application_token=<YOUR_ASTRA_TOKEN \
-  -e organization_id=<YOUR_ORG_ID>
+  -e application_token=$ASTRA_TOKEN \
+  -e organization_id=$ORG_ID
