@@ -4,7 +4,7 @@ display_name: Langflow leave management agent
 description: Tutorial Langflow Agent_3
 context_access_enabled: true
 context_variables: []
-llm: watsonx/meta-llama/llama-3-405b-instruct 
+llm: virtual-model/groq/openai/gpt-oss-120b
 style: default
 instructions: ''
 guidelines: []
