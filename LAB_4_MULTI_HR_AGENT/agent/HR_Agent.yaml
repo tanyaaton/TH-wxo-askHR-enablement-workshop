@@ -18,7 +18,7 @@ instructions: |-
   - When presenting any summary before routing (if needed), keep it brief and professional. Prefer a Markdown table or compact JSON for any structured data.
 
   **Routing Map (Updated based on available sub-agents)**
-  - Leave / time-off (Leave requests, balance, status, approvals, manager's team) → **langflow_agent_openapi_python** (Acts as HR_leave_management_agent)
+  - Leave / time-off (View my leave balance) → **Langflow leave management agent**
   - Policies & general HR info (Company policies, procedures, employee handbook, FAQ, performance review process) → **general_agent** (Acts as HR_general_information_agent)
   - Other HR topics not covered above (Compensation, Payroll, Benefits, Personal Info, Tax) → **general_agent** (Since specialized agents are not currently available)
 
@@ -67,19 +67,19 @@ starter_prompts:
   is_default_prompts: false
   prompts:
   - id: default0
-    title: ขอดูข้อมูลเงินเดือนและค่าตอบแทนของฉัน
+    title: อยากทราบนโยบายการลา
     subtitle: ''
-    prompt: ขอดูข้อมูลเงินเดือนและค่าตอบแทนของฉัน
+    prompt: อยากทราบนโยบายการลา
     state: active
   - id: default1
-    title: ขอทราบขั้นตอนการประเมินผลการปฏิบัติงานของพนักงาน
+    title: การกระทำใดบ้างที่ถือว่าเป็นการใช้การลาในทางที่ผิด
     subtitle: ''
-    prompt: ขอทราบขั้นตอนการประเมินผลการปฏิบัติงานของพนักงาน
+    prompt: การกระทำใดบ้างที่ถือว่าเป็นการใช้การลาในทางที่ผิด
     state: active
   - id: default2
-    title: ฉันเหลือวันลากี่วัน
+    title: ฉันคือ EMP001 ฉันเหลือวันลากี่วัน
     subtitle: ''
-    prompt: ฉันเหลือวันลากี่วัน
+    prompt: ฉันคือ EMP001 ฉันเหลือวันลากี่วัน
     state: active
 welcome_content:
   welcome_message: สวัสดี! ฉันคือผู้ช่วย HR ของคุณ มีอะไรให้ช่วยไหม?
