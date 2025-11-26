@@ -1,24 +1,27 @@
 # ---- Base Image ----
 FROM python:3.11-slim
 
-# ---- Set work directory ----
+# ---- Set Work Directory ----
 WORKDIR /app
 
-# ---- Install system dependencies (optional: curl) ----
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
- && rm -rf /var/lib/apt/lists/*
+# ---- Install OS Dependencies ----
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
 
-# ---- Copy project files ----
-COPY app.py /app/app.py
-COPY requirements.txt /app/requirements.txt
-COPY .env /app/.env  # Optional; remove if using cloud secrets only
-
-# ---- Install Python dependencies ----
+# ---- Copy Project Files ----
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# ---- Expose port (only if running a server, remove if CLI only) ----
-# EXPOSE 8080
+COPY . .
 
-# ---- Start the service ----
-CMD ["python", "app.py"]
+# ---- Expose Port ----
+EXPOSE 8000
+
+# # ---- Environment Variables Placeholders ----
+# # (These will be overridden by cloud deployment environment settings)
+# ENV ASTRA_TOKEN=""
+# ENV ORG_ID=""
+
+# ---- Start the FastAPI Service ----
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
