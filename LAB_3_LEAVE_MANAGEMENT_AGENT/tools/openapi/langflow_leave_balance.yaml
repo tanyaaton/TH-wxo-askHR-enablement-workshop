@@ -1,0 +1,48 @@
+openapi: 3.0.3
+info:
+  title: Employee Leave Balance API
+  version: 1.0.0
+  description: API wrapper for LangFlow leave balance management agent.
+
+servers:
+  - url: https://application-41.235fcpoma4wp.us-south.codeengine.appdomain.cloud
+    description: Production server
+
+paths:
+  /leavebalance:
+    post:
+      summary: Query employee leave balance
+      operationId: getLeaveBalance
+      description: >
+        Calls the backend LangFlow flow to retrieve employee leave balance
+        information using a natural-language query.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - user_query
+              properties:
+                user_query:
+                  type: string
+                  example: "What is the leave balance for employee 12345?"
+      responses:
+        "200":
+          description: Successful response containing the result from the LangFlow agent.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: string
+                    description: Raw JSON/string response returned by LangFlow.
+                    example: "{ \"leave_balance\": \"12 days\", \"employee\": \"12345\" }"
+        "400":
+          description: Bad request due to invalid input.
+        "500":
+          description: Internal server error.
+
+components: {}
