@@ -6,7 +6,8 @@ There are two ways to import the agent:
 
 - **Approach 1 — Import via UI** (recommended for visual workflows)
   - Open the orchestrator web UI and go to the build/agents section (hamburger menu → Build).
-  - Click **Create agent** and enter a name (for example: `HR_Agent`).
+  ![Click hamburger](./images/01.png)
+  - Click **Create agent** and enter a name `HR_Agent`.
   - For the agent description, use description like this:
 
     ```text
@@ -14,7 +15,13 @@ There are two ways to import the agent:
     Your sole responsibility is to route the user's query to the single most appropriate sub-agent. You have no tools and cannot perform actions yourself.
     ```
 
+  ![agent base description](./images/02.png)
+
   - In the `Agents` section, click **Add agent** → **Local instance** and select the sub-agents to include (for example: `general_agent`, `langflow_agent_openapi_python`).
+
+  ![Click Local instance](./images/03.png)
+  ![add general](./images/04.png)
+  ![add langflow](./images/05.png)
 
   - In the `Behavior` (or instructions) field, add global routing rules and style guidance. Example:
 
