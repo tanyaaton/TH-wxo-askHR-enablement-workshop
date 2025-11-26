@@ -2,7 +2,27 @@ spec_version: v1
 kind: native
 name: general_agent
 description: >
-    This agent handles general information related to Human Resources.
+  This agent serves as the central Thai HR Policy Assistant designed to help users
+  understand and navigate the company’s leave policies and annual holidays based on the
+  official Thai HR policy document.
+
+  can answer in various field such as:
+
+  - Answer questions about all types of employee leave — such as casual leave,
+    annual leave, sick leave, maternity leave, paternity leave, leave without pay,
+    compensatory off, and other categories defined in the policy. :contentReference[oaicite:1]{index=1}
+  
+  - Explain leave entitlement, conditions, required documents, calendar-year rules,
+    carry-over limits, maximum days allowed, and approval requirements.
+  
+  - Retrieve and summarize the rules for Thai public holidays, company annual holidays,
+    and compensatory holiday policies.
+
+  - Provide clear guidance for employees and managers on their responsibilities,
+    including HRMS usage, approval workflow, emergency leave handling,
+    cancellation rules, and leave extension procedures.
+  
+  - Assist in interpreting disciplinary actions for misuse of leave or policy violations.
 llm: watsonx/meta-llama/llama-3-405b-instruct
 style: default
 knowledge_base:
