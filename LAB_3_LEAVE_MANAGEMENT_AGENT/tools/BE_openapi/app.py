@@ -1,13 +1,26 @@
 from ibm_watsonx_orchestrate.agent_builder.tools import tool
 from ibm_watsonx_orchestrate.agent_builder.connections import ConnectionType
 from ibm_watsonx_orchestrate.run import connections
-import pandas as pd
+from fastapi import FastAPI
+from pydantic import BaseModel
 import requests
-import os
 import uuid
+import os
 from dotenv import load_dotenv
 
 load_dotenv()
+
+app = FastAPI(
+    title="Employee Leave Balance API",
+    description="API wrapper for LangFlow leave balance agent",
+    version="1.0.0"
+)
+
+# ----- Request Model -----
+class LeaveRequest(BaseModel):
+    user_query: str
+
+
 def get_employee_leave_balance(user_query: str) -> str:
     """This tool connect to langflow leave balance management flow to get employee leave balance info.
     
@@ -38,20 +51,20 @@ def get_employee_leave_balance(user_query: str) -> str:
 
     return response.text
 
+# ----- API Endpoint -----
+@app.post("/leavebalance")
+def leavebalance_api(request: LeaveRequest):
+    """
+    API endpoint to query employee leave balance.
+    """
+    result = get_employee_leave_balance(request.user_query)
+    return {"result": result}
+
+
+# ----- Run the API -----
 if __name__ == "__main__":
-
-    # Example employee ID for testing
-    test_employee_id = ["EMP001", "EMP002", "EMP003"]
-
-    for i in test_employee_id:
-        # Run test
-        try:
-            print(f"Testing get_employee_info() with employee_id={i}")
-            result = get_employee_leave_balance(f"Get leavebalance info for {i}")
-            print("Result:\n", result)
-        except Exception as e:
-            print("Error during test:", e)
-        print("--------------------------------------------------")
+    import uvicorn
+    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
     
 
 
