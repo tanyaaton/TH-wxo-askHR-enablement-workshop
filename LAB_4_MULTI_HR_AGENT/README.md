@@ -1,39 +1,76 @@
 # LAB 4 — Multi HR Agent
 
-This lab demonstrates how to import and work with the Multi HR Agent which composes smaller HR-related agents (for example: general knowledge and leave management).
+This lab shows how to import and configure the Multi HR Agent, which routes HR-related queries to smaller sub-agents (for example: general knowledge and leave management).
 
-**Prerequisites:**
-- `orchestrate` CLI installed and configured and available on your `PATH`.
-- A working shell (this repo was developed on Linux; examples use the `fish` shell).
+There are two ways to import the agent:
 
-**Files of interest:**
+- **Approach 1 — Import via UI** (recommended for visual workflows)
+  - Open the orchestrator web UI and go to the build/agents section (hamburger menu → Build).
+  - Click **Create agent** and enter a name (for example: `HR_Agent`).
+  - For the agent description, use description like this:
+
+    ```text
+    You are the central AI HR Orchestrator, acting as the primary router for employee and manager queries.
+    Your sole responsibility is to route the user's query to the single most appropriate sub-agent. You have no tools and cannot perform actions yourself.
+    ```
+
+  - In the `Agents` section, click **Add agent** → **Local instance** and select the sub-agents to include (for example: `general_agent`, `langflow_agent_openapi_python`).
+
+  - In the `Behavior` (or instructions) field, add global routing rules and style guidance. Example:
+
+    ```text
+    Important Global Rules
+
+    Role
+    - You are a router/orchestrator only. You have NO tools.
+    - For every query, route to exactly one sub-agent that can handle it.
+    - Respond in the language of the user's query (English or Thai).
+
+    Routing Map
+    - Leave / time-off (requests, balances, approvals) → langflow_agent_openapi_python
+    - Policies & general HR info (policies, handbook, FAQ) → general_agent
+    - Other HR topics (compensation, payroll, benefits, tax) → general_agent
+
+    Style & Output
+    - Be professional and concise.
+    - Prefer compact, structured summaries (Markdown table or JSON) when needed.
+    ```
+---
+
+- **Approach 2 — Import via CLI** (scriptable and repeatable)
+
+**Prerequisites**
+- `orchestrate` CLI installed and configured on your `PATH`.
+- Shell examples here use the `fish` shell on Linux.
+
+**Files of interest**
 - Agent manifest: `agent/HR_Agent.yaml`
 
-**Import the agent**
-1. Change into the `agent` folder where the agent manifest lives:
+**Import the agent (CLI)**
+1. Change to the `agent` folder:
 
 ```fish
 cd LAB_4_MULTI_HR_AGENT/agent
 ```
 
-2. Import the agent using the `orchestrate` CLI:
+2. Run the import command:
 
 ```fish
 orchestrate import agent -f HR_Agent.yaml
 ```
 
-This command tells the orchestrator to create (or update) the agent described in `HR_Agent.yaml`. Run it from inside the `agent` folder so the relative paths in the YAML (if any) resolve correctly.
+Run this from the `agent` folder so any relative paths in the YAML resolve correctly.
 
 **What to expect**
-- The CLI should print a success message if the import completes.
-- The imported agent will reference/configure the smaller agents (e.g., general knowledge, leave management) as defined in the YAML.
-- You can verify the agent in your orchestrator's UI or using any CLI commands your orchestrator exposes to list/describe agents.
+- The UI or CLI should confirm a successful import.
+- The imported agent will be configured to route to the specified sub-agents.
+- Verify the agent via the orchestrator UI or CLI list/describe commands.
 
 **Troubleshooting**
-- `file not found` or `no such file`: ensure you are in `LAB_4_MULTI_HR_AGENT/agent` and that `HR_Agent.yaml` exists.
-- YAML validation errors: open `HR_Agent.yaml` and check for indentation or schema issues.
-- Permission errors: ensure you have rights to run the `orchestrate` binary.
+- `file not found`: ensure you're in `LAB_4_MULTI_HR_AGENT/agent` and `HR_Agent.yaml` exists.
+- YAML validation errors: check `HR_Agent.yaml` for syntax/indentation issues.
+- Permission errors: confirm you can execute the `orchestrate` binary.
 
 **Next steps**
-- After a successful import, test the agent end-to-end: send a sample query, verify responses, or check logs for integrated small agents.
-- Inspect `agent/HR_Agent.yaml` to see how the agent composes other agents and what credentials or endpoints are required.
+- After import, exercise the agent with sample queries and review logs or responses from sub-agents.
+- Inspect `agent/HR_Agent.yaml` to confirm routing, agent names, and any required credentials or endpoints.
