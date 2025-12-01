@@ -28,6 +28,7 @@ instructions: |-
 guidelines: []
 collaborators:
 - general_agent
+- tavily_agent
 - langflow_agent_openapi_python
 tools: []
 knowledge_base: []
