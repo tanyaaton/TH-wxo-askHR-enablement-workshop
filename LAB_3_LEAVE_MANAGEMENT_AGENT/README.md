@@ -4,35 +4,25 @@ first, we will connect to the Langflow agent using OpenAPI
 
 
 ## STEPS
-we will connect to the Langlfow agent using OpenAPI through python.
-You can choose to Set up connection for the tool using UI or ADK.
+we will connect to the Langlfow agent using OpenAPI
 
-#### set up connection through UI
+#### Import tool
 
-1. Create new connection name `langflow_secret`, choose tye `Key value`
+1. Create new agent in the `Agent Builder` page
+![alt text](images/image-5.png)
+2. Name the agent `Langfllow Leave Management Agent`
+4. Go to the `Tool` sections and click `Add tool +`
+![alt text](<images/image-6.png>)
+5. Choose the `langflow_leave_balance.yaml` file
+![alt text](images/image-7.png)
+6. choose the **Query employee leave balance tool**, and click `Done`
+![alt text](images/image-8.png)
 
-    ...
+7. The tool will appear, ready to be called by the agent
+![alt text](images/image-9.png)
 
 
-#### set up connection through ADK
 
-1. Create .env file and add the following value to the file (You will recieve this through email)
-    ```
-    ASTRA_TOKEN=AstraCS:oCfnb.....
-    ORG_ID=cfe0f....
-    ```
-2. run the following command in `LAB_3_LEAVE_MANAGEMENT_AGENT_3` folder
-    ```
-    bash set_connection.sh
-    ```
-
-#### Import agent and tool
-
-After set up connection, use the following ADK command to import Langflow tools:
-```
-bash import-all.sh
-```
-the agent should pop up on your watsonx.Orchestrate Agent builder page.
 
 use the following questions to test the agent
 - give me leave balance of EMP001
