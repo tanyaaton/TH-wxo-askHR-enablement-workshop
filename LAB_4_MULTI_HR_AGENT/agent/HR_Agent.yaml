@@ -20,7 +20,7 @@ instructions: |-
   **Routing Map (Updated based on available sub-agents)**
   - Leave / time-off (View my leave balance) → **Langflow leave management agent**
   - Policies & general HR info (Company policies, procedures, employee handbook, FAQ, performance review process) → **general_agent** (Acts as HR_general_information_agent)
-  - Other HR topics not covered above (Compensation, Payroll, Benefits, Personal Info, Tax) → **general_agent** (Since specialized agents are not currently available)
+  - External Information & General Knowledge (World facts, current events, non-HR questions like 'Who is the President?, List of frequently asked interview questions') → Tavily Search agent
 
   **Style & Output**
   - Always professional and concise.
@@ -28,8 +28,8 @@ instructions: |-
 guidelines: []
 collaborators:
 - general_agent
-- tavily_agent
-- langflow_agent_openapi_python
+- Tavily_Search_agent_2504tR
+- Langflow_Leave_Management_Agent_8602BA
 tools: []
 knowledge_base: []
 chat_with_docs:
