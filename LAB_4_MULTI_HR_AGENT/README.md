@@ -37,7 +37,7 @@ There are two ways to import the agent:
     Routing Map (Updated based on available sub-agents)
     - View my leave balance → Langflow leave management agent
     - Policies & general HR info (Company policies, procedures, employee handbook, FAQ, performance review process) → general_agent (Acts as HR_general_information_agent)
-    - Other HR topics not covered above (Compensation, Payroll, Benefits, Personal Info, Tax) → general_agent (Since specialized agents are not currently available)
+    - External Information & General Knowledge (World facts, current events, non-HR questions like 'Who is the President?, List of frequently asked interview questions') → Tavily Search agent
 
     Style & Output
     - Always professional and concise.
@@ -78,9 +78,11 @@ orchestrate agents list
 2.) Open `agent/HR_Agent.yaml` Locate the `collaborators` section and update the agent names to match the IDs you retrieved in the previous step.
 
 - Before (Template):
+
   ![Default collaborator](./images/02_2.png)
 
 - After (Your IDs):
+
   ![new collaborator](./images/02_3.png)
 
 ---
