@@ -10,16 +10,27 @@ we will connect to the Langlfow agent using OpenAPI
 
 1. Create new agent in the `Agent Builder` page
 ![alt text](images/image-5.png)
-2. Name the agent `Langfllow Leave Management Agent`
-4. Go to the `Tool` sections and click `Add tool +`
+2. Name the agent `Langflow Leave Management Agent` with following description
+```
+This agent have tool 'Query employee leave balance' This tool used when user want to view their personal leave balance.
+```
+4. Go to the `Tool` sections and click `Add tool +` then Select `OpenAPI`
 ![alt text](<images/image-6.png>)
-5. Choose the `langflow_leave_balance.yaml` file
+5. Choose the `langflow_leave_balance.yaml` file, this file contain inside `LAB_3_LEAVE_MANAGEMENT/tools/langflow_leave_balance.yaml`
 ![alt text](images/image-7.png)
 6. choose the **Query employee leave balance tool**, and click `Done`
 ![alt text](images/image-8.png)
 
 7. The tool will appear, ready to be called by the agent
 ![alt text](images/image-9.png)
+
+8. Scroll down to `Behavior` section using behavior as below:
+```
+When user need to view their personal leave balance calling 'Query employee leave balance' tool.
+```
+
+![behavior section](images/image-10.png)
+
 
 
 
