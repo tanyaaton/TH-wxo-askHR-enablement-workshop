@@ -45,7 +45,10 @@ This guide walks you through integrating Tavily search capabilities with Watson 
 
 8. test the agent with the following question
 
-- How do I create an effective performance improvement plan?
+- Search for how to calculate employee turnover rate?
+- Search for what questions can be legally asked in an interview?
+
+
 
 
 
