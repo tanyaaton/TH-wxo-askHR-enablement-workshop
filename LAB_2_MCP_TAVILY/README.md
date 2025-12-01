@@ -18,7 +18,7 @@ This guide walks you through integrating Tavily search capabilities with Watson 
 
 1. In your Watson Orchestrate instance Click on `Agent Builder` page and, create a new agent. 
 - Name: `Tavily Search agent`
-- Description: `This agent can search internet for information out side of dicument knowledge`
+- Description: `This agent can search internet for information out side of internal document knowledge`
 ![alt text](images/image-5.png)
 ![alt text](images/image.png)
 
@@ -33,7 +33,7 @@ This guide walks you through integrating Tavily search capabilities with Watson 
 5. On the top right corner, click `Add MCP Server`
 ![alt text](images/image-2.png)
 
-6. input server name as `tavily-server`and input the following command (replace your API keys)
+6. input server name as `tavily-server`and input the following command (replace your API keys), Click `Connect` then `Done`
    ```
    npx -y mcp-remote https://mcp.tavily.com/mcp/?tavilyApiKey=<your-api-key>
    ```
@@ -43,7 +43,13 @@ This guide walks you through integrating Tavily search capabilities with Watson 
 
    ![alt text](images/image-4.png)
 
-8. test the agent with the following question
+8. Scroll down at `Behavior` section, enter instruction provided below:
+
+```
+use 'tavily-server:tavily_search' when user need to search any informations.
+```
+
+9. test the agent with the following question
 
 - Search for how to calculate employee turnover rate?
 - Search for what questions can be legally asked in an interview?
