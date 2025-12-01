@@ -4,7 +4,7 @@ This lab shows how to import and configure the Multi HR Agent, which routes HR-r
 
 There are two ways to import the agent:
 
-- **Approach 1 — Import via UI** (recommended for visual workflows)
+## Approach 1 — Import via UI (recommended for visual workflows)
   - Open the orchestrator web UI and go to the build/agents section (hamburger menu → Build).
   ![Click hamburger](./images/01.png)
   - Click **Create agent** and enter a name `HR_Agent`.
@@ -44,7 +44,7 @@ There are two ways to import the agent:
     ```
 ---
 
-- **Approach 2 — Import via CLI** (scriptable and repeatable)
+## Approach 2 — Import via CLI (scriptable and repeatable)
 
 **Prerequisites**
 - `orchestrate` CLI installed and configured on your `PATH`.
