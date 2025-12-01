@@ -18,7 +18,7 @@ This guide walks you through integrating Tavily search capabilities with Watson 
 
 1. In your Watson Orchestrate instance Click on `Agent Builder` page and, create a new agent. 
 - Name: `Tavily Search agent`
-- Description: `This agent can search internet for information out side of internal document knowledge`
+- Description: `Responsible for fetching external, real-time information from the internet. Use this agent for general world knowledge, news, current events, and facts that are completely unrelated to internal company documents, HR policies, or employee data.`
 ![alt text](images/image-5.png)
 ![alt text](images/image.png)
 
