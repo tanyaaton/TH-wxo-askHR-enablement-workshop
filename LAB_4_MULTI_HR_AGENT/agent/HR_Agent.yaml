@@ -28,8 +28,8 @@ instructions: |-
 guidelines: []
 collaborators:
 - general_agent
-- tavily_agent
-- langflow_agent_openapi_python
+- Tavily_Search_agent_2504tR
+- Langflow_Leave_Management_Agent_8602BA
 tools: []
 knowledge_base: []
 chat_with_docs:

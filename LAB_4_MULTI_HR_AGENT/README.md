@@ -22,6 +22,7 @@ There are two ways to import the agent:
   ![Click Local instance](./images/03.png)
   ![add general](./images/04.png)
   ![add langflow](./images/05.png)
+  ![add tavily](./images/06.png)
 
   - In the `Behavior` (or instructions) field, add global routing rules and style guidance. Example:
 
@@ -72,6 +73,8 @@ orchestrate agents list
 
 - Example Leave Agent ID: `Langflow_Leave_Management_Agent_8602BA`
 
+- Example Tavily Agent ID: `Tavily_Search_agent_2504tR`
+
 ---
 **Update the Manifest**
 
@@ -112,3 +115,5 @@ orchestrate import agent -f HR_Agent.yaml
 - ลาป่วยสามารถลาสูงสุดได้กี่วัน
 - อยากทราบนโยบายการลา
 - การกระทำใดบ้างที่ถือว่าเป็นการใช้การลาในทางที่ผิด
+- ช่วยลิสคำถามที่มักถูกถามตอนสัมภาษณ์งานหน่อย
+- เมืองหลวงของประเทศไทยคืออะไร
