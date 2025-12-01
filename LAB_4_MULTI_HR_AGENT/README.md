@@ -12,12 +12,12 @@ There are two ways to import the agent:
 
     ```text
     You are the central AI HR Orchestrator, acting as the primary router for employee and manager queries.
-    Your sole responsibility is to route the user's query to the single most appropriate sub-agent. You have no tools and cannot perform actions yourself.
+    Your role responsibility is to route the user's query to the single most appropriate sub-agent. 
     ```
 
   ![agent base description](./images/02.png)
 
-  - In the `Agents` section, click **Add agent** → **Local instance** and select the sub-agents to include (for example: `general_agent`, `langflow_agent_openapi_python`).
+  - In the `Agents` section, click **Add agent** → **Local instance** and select the sub-agents to include (for example: `general_agent`, `Langflow Leave Management Agent`).
 
   ![Click Local instance](./images/03.png)
   ![add general](./images/04.png)
@@ -28,56 +28,85 @@ There are two ways to import the agent:
     ```text
     Important Global Rules
 
-    Role
+    Your Role
     - You are a router/orchestrator only. You have NO tools.
-    - For every query, route to exactly one sub-agent that can handle it.
+    - You must transfer every query to exactly one sub-agent that can handle it.
     - Respond in the language of the user's query (English or Thai).
+    - When presenting any summary before routing (if needed), keep it brief and professional. Prefer a Markdown table or compact JSON for any structured data.
 
-    Routing Map
-    - Leave / time-off (requests, balances, approvals) → langflow_agent_openapi_python
-    - Policies & general HR info (policies, handbook, FAQ) → general_agent
-    - Other HR topics (compensation, payroll, benefits, tax) → general_agent
+    Routing Map (Updated based on available sub-agents)
+    - View my leave balance → Langflow leave management agent
+    - Policies & general HR info (Company policies, procedures, employee handbook, FAQ, performance review process) → general_agent (Acts as HR_general_information_agent)
+    - Other HR topics not covered above (Compensation, Payroll, Benefits, Personal Info, Tax) → general_agent (Since specialized agents are not currently available)
 
     Style & Output
-    - Be professional and concise.
-    - Prefer compact, structured summaries (Markdown table or JSON) when needed.
+    - Always professional and concise.
+    - Always show data in Tableau-style tables as output.
     ```
 ---
 
-## Approach 2 — Import via CLI (scriptable and repeatable)
+## Approach 2 — Import via CLI (scriptable)
+This method is best for repeatable deployments and CI/CD pipelines.
 
 **Prerequisites**
-- `orchestrate` CLI installed and configured on your `PATH`.
-- Shell examples here use the `fish` shell on Linux.
+- `orchestrate` CLI installed.
 
 **Files of interest**
 - Agent manifest: `agent/HR_Agent.yaml`
 
-**Import the agent (CLI)**
-1. Change to the `agent` folder:
+**Identify Sub-Agent IDs**
 
-```fish
-cd LAB_4_MULTI_HR_AGENT/agent
+1.) Before importing, you must ensure the `HR_Agent.yaml` points to the correct sub-agent IDs in your environment.
+
+Run the list command:
+
+```
+orchestrate agents list
 ```
 
-2. Run the import command:
+![List agent](./images/02_1.png)
 
-```fish
+**Note**: Identify the specific ID (the name outside the parentheses) for your sub-agents.
+
+- Example General Agent ID: `general_agent`
+
+- Example Leave Agent ID: `Langflow_Leave_Management_Agent_8602BA`
+
+---
+**Update the Manifest**
+
+2.) Open `agent/HR_Agent.yaml` Locate the `collaborators` section and update the agent names to match the IDs you retrieved in the previous step.
+
+- Before (Template):
+  ![Default collaborator](./images/02_2.png)
+
+- After (Your IDs):
+  ![new collaborator](./images/02_3.png)
+
+---
+
+**Import the Agent**
+
+3.) Navigate to the agent directory and run the import command:
+
+```
+cd LAB_4_MULTI_HR_AGENT/agent
 orchestrate import agent -f HR_Agent.yaml
 ```
 
-Run this from the `agent` folder so any relative paths in the YAML resolve correctly.
 
 **What to expect**
 - The UI or CLI should confirm a successful import.
 - The imported agent will be configured to route to the specified sub-agents.
 - Verify the agent via the orchestrator UI or CLI list/describe commands.
 
-**Troubleshooting**
-- `file not found`: ensure you're in `LAB_4_MULTI_HR_AGENT/agent` and `HR_Agent.yaml` exists.
-- YAML validation errors: check `HR_Agent.yaml` for syntax/indentation issues.
-- Permission errors: confirm you can execute the `orchestrate` binary.
-
 **Next steps**
 - After import, exercise the agent with sample queries and review logs or responses from sub-agents.
 - Inspect `agent/HR_Agent.yaml` to confirm routing, agent names, and any required credentials or endpoints.
+
+**Testing queries**
+- อยากทราบจำนวนวันลาคงเหลือของ EMP001
+- อยากทราบจำนวนวันลาคงเหลือของ EMP002
+- ลาป่วยสามารถลาสูงสุดได้กี่วัน
+- อยากทราบนโยบายการลา
+- การกระทำใดบ้างที่ถือว่าเป็นการใช้การลาในทางที่ผิด
