@@ -1,6 +1,6 @@
 spec_version: v1
 kind: knowledge_base
-name: group_knowledge_base
+name: general_knowledge_base
 description: |
   This knowledge base provides a comprehensive and authoritative reference for the company’s general policies and complete set of employee leave guidelines. It consolidates all essential rules, responsibilities, procedures, and eligibility criteria required for employees and managers to operate within the company’s standards.
   - Defines the overarching principles governing workplace operations, including policy scope, working hours, employee conduct, confidentiality obligations, and safety responsibilities across all departments.
@@ -14,13 +14,13 @@ description: |
   - Serves as a unified policy reference designed to help employees understand their rights, obligations, behavioral expectations, and the correct processes concerning workplace conduct and leave management.
 
 documents:
-  # - path: ./company_general_policy_extended.pdf
-# documents:
   - path: ./thai_policy_latest.pdf
-
 
 vector_index:
   embeddings_model_name: intfloat/multilingual-e5-large
+  chunk_size: 1000
+  chunk_overlap: 300
+  extraction_strategy: standard
 
 conversational_search_tool:
   language: "th"

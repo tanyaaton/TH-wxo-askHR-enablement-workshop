@@ -22,8 +22,8 @@ bash import-all.sh
 ```
 or
 ```
-orchestrate knowledge-bases import -f policy/group_knowledge_base.yaml
-orchestrate agents import -f general_agent.yaml
+orchestrate knowledge-bases import -f policy/general_knowledge_base.yaml
+orchestrate agents import -f agents/general_agent.yaml
 ```
 
 

@@ -7,3 +7,4 @@ __pycache__/
 .venv/
 _backup/
 set_connection_creds.sh
+venv
