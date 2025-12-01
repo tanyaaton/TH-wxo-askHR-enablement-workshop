@@ -10,7 +10,7 @@ description: >
 
   - Answer questions about all types of employee leave — such as casual leave,
     annual leave, sick leave, maternity leave, paternity leave, leave without pay,
-    compensatory off, and other categories defined in the policy. :contentReference[oaicite:1]{index=1}
+    compensatory off, and other categories defined in the policy.
   
   - Explain leave entitlement, conditions, required documents, calendar-year rules,
     carry-over limits, maximum days allowed, and approval requirements.
@@ -23,10 +23,10 @@ description: >
     cancellation rules, and leave extension procedures.
   
   - Assist in interpreting disciplinary actions for misuse of leave or policy violations.
-llm: watsonx/meta-llama/llama-3-405b-instruct
+llm: groq/openai/gpt-oss-120b
 style: default
 knowledge_base:
-  - group_knowledge_base
+  - general_knowledge_base
 tools: []
 welcome_content:
   welcome_message: "สวัสดี! ฉันคือผู้ช่วย HR ของคุณ มีอะไรให้ช่วยไหม?"
