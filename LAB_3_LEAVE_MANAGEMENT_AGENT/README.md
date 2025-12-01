@@ -24,7 +24,8 @@ This agent have tool 'Query employee leave balance' This tool used when user wan
 7. The tool will appear, ready to be called by the agent
 ![alt text](images/image-9.png)
 
-8. Scroll down to `Behavior` section using behavior as below:
+8. Scroll down to the `Behavior` section, enter instuctions provided below:
+
 ```
 When user need to view their personal leave balance calling 'Query employee leave balance' tool.
 ```
