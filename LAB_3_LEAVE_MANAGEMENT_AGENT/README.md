@@ -60,7 +60,11 @@ Component of the flow includes:
 - Chat output
 
 5. Go to `Setting`, Add values to 3 global connection variables
-![alt text](image.png)
+![alt text](./images/image.png)
+
+- GROQ_API_KEY
+- ASTRA_DB_APPLICATION_TOKEN
+- ASTRA_DB_API_ENDPOINT
 
 6. Click on `Playground` on the top right to try running flow on Langflow
 
