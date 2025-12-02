@@ -273,7 +273,7 @@ you must answer in Thai
   ### Testing
   
   - `ฉันอยากเปรียบเทียบ resume ของ candidate` / `เช็คคะแนน resume`
-  ![Input1](images/image50.png)
+  ![Input1](images/34.png)
 
 - Answer with
 ```
@@ -290,11 +290,7 @@ Experience spans from managing existing clients to acquiring new ones across div
 
 ## Example
 
-  ![first example pic](images/image51.png)
-
-  ![second example pic](images/image52.png)
-
-  ![output](images/image57.png)
+  ![output](images/35.png)
 
 
 
