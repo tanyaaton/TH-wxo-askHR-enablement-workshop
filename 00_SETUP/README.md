@@ -118,7 +118,8 @@ Then run the script:
 
 ## 5. Activating watsonx Orchestrate environment
 Assuming your are running watsonx Orchestrate on AWS Cloud (Saas),
-Please get your credentials from ![alt text](images/image_n.png)
+Please get your credentials from 
+![alt text](images/image-9.png)
 ```
 orchestrate env list
 orchestrate env add -n trial-env -u <Service instance URL>
