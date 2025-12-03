@@ -27,6 +27,10 @@ sudo apt install python3.11 python3.11-venv python3.11-distutils
 1. Download the Python 3.11 installer from the [official Python website](https://www.python.org/downloads/release/python-3110/).
 2. Run the installer and follow the prompts. Make sure to check "Add Python to PATH" during installation.
 
+#### On Mac:
+1. [Install brew](https://brew.sh/)
+2. Follow the instruction on this [link](https://formulae.brew.sh/formula/python@3.11) to install python 3.11
+
 #### Verify installation:
 
 ##### Mac
