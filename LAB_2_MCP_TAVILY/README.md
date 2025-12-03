@@ -43,13 +43,13 @@ This guide walks you through integrating Tavily search capabilities with Watson 
 
    ![alt text](images/image-4.png)
 
-8. Scroll down at `Behavior` section, enter instruction provided below:
+<!-- 8. Scroll down at `Behavior` section, enter instruction provided below:
 
 ```
 use 'tavily-server:tavily_search' when user need to search any informations.
-```
+``` -->
 
-9. test the agent with the following question
+Test the agent with the following question
 
 - Search for how to calculate employee turnover rate?
 - Search for what questions can be legally asked in an interview?
