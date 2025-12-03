@@ -179,6 +179,10 @@ Identify the skills section, which may be under headings like 'Skills', 'Key Ski
 Extract the entire work history section. This section may be titled 'Experience', 'Work Experience', 'Professional Experience', 'Employment History', 'Career History', or 'Relevant Experience'. Include all job entries listed, capturing the company name, job title, dates of employment, and the description of responsibilities for each role.
 ```
 
+8.6 Make sure that `User Review` must be unchecked
+
+![uncheck user review](./images/24_1.png)
+
 <!--  
 8.6 Open document dropdown and Click **Mangage documents** and upload file from ```sameple/sr-sale-resume.pdf```
 ![add more sample document](images/image35.png)
@@ -276,6 +280,13 @@ you must answer in Thai
   ![Input1](images/34.png)
 
 - Answer with
+
+```
+A Senior Sales
+```
+
+or you can also provide more context
+
 ```
 A Senior Sales professional with a strong background in both B2B and B2C sales, equipped with
 excellent communication skills essential for building client relationships and closing high-level deals.
