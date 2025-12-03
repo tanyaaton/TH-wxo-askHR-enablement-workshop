@@ -17,13 +17,15 @@ This lab we will use an ADK(Agent Development Kit) to create and configurate the
 ---
 
 run the following command
-```
-bash import-all.sh
-```
-or
+
 ```
 orchestrate knowledge-bases import -f policy/general_knowledge_base.yaml
 orchestrate agents import -f agents/general_agent.yaml
+```
+or
+
+```
+bash import_all.sh
 ```
 
 
