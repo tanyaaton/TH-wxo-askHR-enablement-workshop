@@ -1,7 +1,7 @@
 kind: native
 name: langflow_agent_openapi_python
 display_name: Langflow leave management agent
-description: Tutorial Langflow Agent_3
+description: This agent connects to a Langflow instance to handle leave balance queries.
 context_access_enabled: true
 context_variables: []
 llm: virtual-model/groq/openai/gpt-oss-120b

@@ -10,7 +10,7 @@ we will connect to the Langlfow agent using OpenAPI
 
 1. Create new agent in the `Agent Builder` page
 ![alt text](images/image-5.png)
-2. Name the agent `Langflow Leave Management Agent` with following description
+2. Name the agent `langflow_leave_management_agent` with following description
 ```
 This agent have tool 'Query employee leave balance' This tool used when user want to view their personal leave balance.
 ```
