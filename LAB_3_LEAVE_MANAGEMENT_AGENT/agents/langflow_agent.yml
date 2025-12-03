@@ -10,6 +10,6 @@ instructions: ''
 guidelines: []
 collaborators: []
 tools:
-- Leave_balance
+- getLeaveBalance
 knowledge_base: []
 spec_version: v1
