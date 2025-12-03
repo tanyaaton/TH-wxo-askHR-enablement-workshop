@@ -1,0 +1,481 @@
+{
+  "spec": {
+    "kind": "flow",
+    "name": "resume_scoring_tool_6677R6",
+    "initiators": [],
+    "description": "This tool using when user need to compare candidate's resume. when using this tool Don't ask any question follow the flow only",
+    "display_name": "resume_scoring_tool",
+    "input_schema": {},
+    "output_schema": {}
+  },
+  "edges": [
+    {
+      "id": "aa5cf740-0ec6-4bb2-b500-637cee002a04",
+      "end": "UserActivity 1",
+      "start": "__start__"
+    },
+    {
+      "id": "93545649-033d-41b5-a06b-bf7d293a1403",
+      "end": "__end__",
+      "start": "UserActivity 1"
+    }
+  ],
+  "nodes": {
+    "__end__": {
+      "spec": {
+        "kind": "end",
+        "name": "__end__",
+        "position": {
+          "x": 0,
+          "y": 1189
+        }
+      }
+    },
+    "__start__": {
+      "spec": {
+        "kind": "start",
+        "name": "__start__",
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    "UserActivity 1": {
+      "spec": {
+        "kind": "user_flow",
+        "name": "UserActivity 1",
+        "position": {
+          "x": -20,
+          "y": 216
+        },
+        "dimensions": {
+          "width": 286,
+          "height": 888
+        },
+        "initiators": [],
+        "display_name": "User activity 1"
+      },
+      "edges": [
+        {
+          "id": "f6828ca8-a560-4737-b65d-0eec18828031",
+          "end": "user_28fc3b3a-cd26-4552-adf1-37bdc66e2b9b",
+          "start": "UserActivity 1__start__"
+        },
+        {
+          "id": "1afd458e-29b4-404e-b7d2-ed60287a493e",
+          "end": "prompt_71733169-c87b-4193-973d-f37c6059c6e9",
+          "start": "user_28fc3b3a-cd26-4552-adf1-37bdc66e2b9b"
+        },
+        {
+          "id": "72d8acbc-13c7-4a20-92a9-b9f838f54a1e",
+          "end": "user_26462ea8-4a59-4980-b9f2-a113bae559e9",
+          "start": "prompt_71733169-c87b-4193-973d-f37c6059c6e9"
+        },
+        {
+          "id": "c6c7f7a8-fb63-4cfc-9792-69fd770f9bf7",
+          "end": "docext_a6a1abf4-4f3b-4153-84f1-d6f4abc65dba",
+          "start": "user_26462ea8-4a59-4980-b9f2-a113bae559e9"
+        },
+        {
+          "id": "d8cc5a41-2357-4fb2-9c40-2dd57e6451d0",
+          "end": "prompt_20f5d256-a185-4b5c-96e8-3d86120d7c23",
+          "start": "docext_a6a1abf4-4f3b-4153-84f1-d6f4abc65dba"
+        },
+        {
+          "id": "69b477e4-5d2a-49d0-9109-69657b9bdce6",
+          "end": "UserActivity 1__end__",
+          "start": "prompt_20f5d256-a185-4b5c-96e8-3d86120d7c23"
+        }
+      ],
+      "nodes": {
+        "UserActivity 1__end__": {
+          "spec": {
+            "kind": "end",
+            "name": "UserActivity 1__end__",
+            "position": {
+              "x": 20,
+              "y": 840
+            }
+          }
+        },
+        "UserActivity 1__start__": {
+          "spec": {
+            "kind": "start",
+            "name": "UserActivity 1__start__",
+            "position": {
+              "x": 20,
+              "y": 0
+            }
+          }
+        },
+        "user_26462ea8-4a59-4980-b9f2-a113bae559e9": {
+          "spec": {
+            "kind": "user",
+            "name": "user_26462ea8-4a59-4980-b9f2-a113bae559e9",
+            "fields": [
+              {
+                "kind": "file",
+                "name": "upload_13f66fb1-711a-4109-8893-18be16ea7712",
+                "direction": "input",
+                "output_schema": {
+                  "type": "object",
+                  "required": [
+                    "value"
+                  ],
+                  "properties": {
+                    "value": {
+                      "type": "string",
+                      "format": "wxo-file"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            ],
+            "owners": [],
+            "position": {
+              "x": 20,
+              "y": 402
+            },
+            "display_name": "Resume uploader"
+          }
+        },
+        "user_28fc3b3a-cd26-4552-adf1-37bdc66e2b9b": {
+          "spec": {
+            "kind": "user",
+            "name": "user_28fc3b3a-cd26-4552-adf1-37bdc66e2b9b",
+            "fields": [
+              {
+                "kind": "text",
+                "name": "text_input_d1f032f9-3daf-49de-9d21-427ea9dc9d70",
+                "direction": "input",
+                "output_schema": {
+                  "type": "object",
+                  "required": [
+                    "value"
+                  ],
+                  "properties": {
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            ],
+            "owners": [],
+            "position": {
+              "x": 20,
+              "y": 110
+            },
+            "display_name": "\u0e01\u0e23\u0e38\u0e13\u0e32\u0e01\u0e23\u0e2d\u0e01\u0e23\u0e32\u0e22\u0e25\u0e30\u0e40\u0e2d\u0e35\u0e22\u0e14\u0e02\u0e2d\u0e07\u0e15\u0e33\u0e41\u0e2b\u0e19\u0e48\u0e07\u0e07\u0e32\u0e19"
+          }
+        },
+        "docext_a6a1abf4-4f3b-4153-84f1-d6f4abc65dba": {
+          "spec": {
+            "kind": "docext",
+            "name": "docext_a6a1abf4-4f3b-4153-84f1-d6f4abc65dba",
+            "task": "custom_field_extraction",
+            "config": {
+              "llm": "watsonx/meta-llama/llama-3-2-11b-vision-instruct",
+              "type": "agreement",
+              "domain": "other",
+              "fields": [
+                {
+                  "name": "experiences",
+                  "type": "string",
+                  "examples": [],
+                  "field_name": "experiences",
+                  "description": "Extract the entire work history section. This section may be titled 'Experience', 'Work Experience', 'Professional Experience', 'Employment History', 'Career History', or 'Relevant Experience'. Include all job entries listed, capturing the company name, job title, dates of employment, and the description of responsibilities for each role.",
+                  "example_value": "",
+                  "multiple_mentions": false
+                },
+                {
+                  "name": "skills",
+                  "type": "string",
+                  "examples": [],
+                  "field_name": "skills",
+                  "description": "Identify the skills section, which may be under headings like 'Skills', 'Key Skills', 'Technical Skills', 'Proficiencies', or 'Core Competencies'. Extract all individual skills mentioned into a list. The skills can be separated by commas, bullet points, or new lines. If skills are categorized (e.g., 'Programming Languages', 'Databases'), extract all of them into a single, flat list.",
+                  "example_value": "",
+                  "multiple_mentions": false
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "examples": [],
+                  "field_name": "name",
+                  "description": "",
+                  "example_value": "",
+                  "multiple_mentions": false
+                }
+              ],
+              "field_extraction_method": "classic"
+            },
+            "version": "TIP",
+            "position": {
+              "x": 20,
+              "y": 548
+            },
+            "display_name": "Document extractor",
+            "input_schema": {
+              "type": "object",
+              "title": "Document extractor input",
+              "required": [
+                "document_ref"
+              ],
+              "properties": {
+                "document_ref": {
+                  "type": "string",
+                  "title": "Document reference",
+                  "format": "binary",
+                  "description": "Either an ID or a URL identifying the document to be used."
+                }
+              }
+            },
+            "enable_review": true,
+            "output_schema": {
+              "type": "object",
+              "title": "Field values",
+              "required": [
+                "experiences",
+                "skills",
+                "name"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "title": "name",
+                  "description": "Extracted value for name"
+                },
+                "skills": {
+                  "type": "string",
+                  "title": "skills",
+                  "description": "Identify the skills section, which may be under headings like 'Skills', 'Key Skills', 'Technical Skills', 'Proficiencies', or 'Core Competencies'. Extract all individual skills mentioned into a list. The skills can be separated by commas, bullet points, or new lines. If skills are categorized (e.g., 'Programming Languages', 'Databases'), extract all of them into a single, flat list."
+                },
+                "experiences": {
+                  "type": "string",
+                  "title": "experiences",
+                  "description": "Extract the entire work history section. This section may be titled 'Experience', 'Work Experience', 'Professional Experience', 'Employment History', 'Career History', or 'Relevant Experience'. Include all job entries listed, capturing the company name, job title, dates of employment, and the description of responsibilities for each role."
+                }
+              }
+            },
+            "review_fields": [
+              "experiences",
+              "skills",
+              "name"
+            ],
+            "min_confidence": 0.95,
+            "review_assignee_option": "flow_initiator"
+          },
+          "input_map": {
+            "spec": {
+              "maps": [],
+              "name": "",
+              "fallback_strategy": "ask_the_user"
+            }
+          }
+        },
+        "prompt_20f5d256-a185-4b5c-96e8-3d86120d7c23": {
+          "spec": {
+            "llm": "groq/openai/gpt-oss-120b",
+            "kind": "prompt",
+            "name": "prompt_20f5d256-a185-4b5c-96e8-3d86120d7c23",
+            "metadata": {
+              "creativity_slider_position": "5",
+              "creativity_slider_manual_override": false
+            },
+            "position": {
+              "x": 20,
+              "y": 694
+            },
+            "test_data": [
+              {
+                "value": "",
+                "source": "self.input.name"
+              },
+              {
+                "value": "",
+                "source": "self.input.skills"
+              },
+              {
+                "value": "",
+                "source": "self.input.experiences"
+              },
+              {
+                "value": "",
+                "source": "self.input.expected_criteria_experiences"
+              },
+              {
+                "value": "",
+                "source": "self.input.expected_criteria_skills"
+              }
+            ],
+            "description": "",
+            "user_prompt": "Candidate: candidate name={self.input.name}, skills={self.input.skills}, experiences={self.input.experiences}\nexpected_criteria: {self.input.expected_criteria_experiences}, {self.input.expected_criteria_skills}",
+            "display_name": "Scoring agent",
+            "input_schema": {
+              "type": "object",
+              "required": [
+                "name",
+                "skills",
+                "experiences",
+                "expected_criteria_experiences",
+                "expected_criteria_skills"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": ""
+                },
+                "skills": {
+                  "type": "string",
+                  "description": ""
+                },
+                "experiences": {
+                  "type": "string",
+                  "description": ""
+                },
+                "expected_criteria_skills": {
+                  "type": "string",
+                  "description": ""
+                },
+                "expected_criteria_experiences": {
+                  "type": "string",
+                  "description": ""
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "string"
+                }
+              }
+            },
+            "system_prompt": "You are a resume comparison agent. Compare candidates' resume against the provided expected criteria. For each candidate, score them on a scale of 0-100, where 100 means the resume fully matches the criteria and 0 means no match. The comparison should be based on the following:\n1. **Skills**: Evaluate the alignment of the candidate's skills with the job's requirements.\n2. **Experiences**: Assess the relevance and quality of the candidate's experiences, including years of experiences and the level of responsibility.\n3. **Achievements**: Review the candidate's notable achievements that demonstrate their ability to succeed in the role.\n4. **Other Key Factors**: Consider any other relevant factors such as certifications, leadership, and adaptability.\n\nFor each candidate, provide a detailed breakdown of the score in these sections:\n- **Skills**: Explain how well the candidate\u2019s skills align with the job\u2019s requirements.\n- **Experiences**: Detail the relevance of their experiences to the role, including the number of years and level of seniority.\n- **Achievements**: Highlight significant accomplishments and their impact.\n- **Other Key Factors**: Mention additional qualities or experiences that may impact their suitability for the job.\n\nThe output should include a **score** for each candidate along with **explanations** for each of the above categories, ensuring that candidate are evaluated equally and fairly.",
+            "llm_parameters": {
+              "top_k": 30,
+              "top_p": 0.7,
+              "temperature": 0.4,
+              "max_new_tokens": 200,
+              "min_new_tokens": 50,
+              "stop_sequences": [
+                "Human",
+                "AI"
+              ]
+            },
+            "prompt_examples": [],
+            "error_handler_config": {
+              "max_retries": 0,
+              "error_message": "Something went wrong while running 'Scoring agent'",
+              "retry_interval": 1000
+            },
+            "include_agent_context": false
+          },
+          "input_map": {
+            "spec": {
+              "maps": [],
+              "name": "",
+              "fallback_strategy": "ask_the_user"
+            }
+          }
+        },
+        "prompt_71733169-c87b-4193-973d-f37c6059c6e9": {
+          "spec": {
+            "llm": "groq/openai/gpt-oss-120b",
+            "kind": "prompt",
+            "name": "prompt_71733169-c87b-4193-973d-f37c6059c6e9",
+            "metadata": {
+              "creativity_slider_position": "5",
+              "creativity_slider_manual_override": false
+            },
+            "position": {
+              "x": 20,
+              "y": 256
+            },
+            "test_data": [
+              {
+                "value": "",
+                "source": "self.input.job_position"
+              }
+            ],
+            "description": "",
+            "user_prompt": "job position: {self.input.job_position}",
+            "display_name": "Generative prompt",
+            "input_schema": {
+              "type": "object",
+              "required": [
+                "job_position"
+              ],
+              "properties": {
+                "job_position": {
+                  "type": "string",
+                  "description": "job position which user interested"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "expected_criteria": {
+                  "type": "object",
+                  "properties": {
+                    "skills": {
+                      "type": "string"
+                    },
+                    "experience": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "expected_criteria align with job"
+                }
+              }
+            },
+            "system_prompt": "Rules:\n1. Answer in JSON format only. \n2. You will get job position from user query and you will return only related information for that job position. \n3. Do NOT ask any question from user. They will give you a job position and you will return JSON only.\n4. Ensure all fields are filled with appropriate data and avoid leaving any blank (e.g., 'not specified').\n5. For the experience field, provide in-depth details and a comprehensive description. Do not just include a number or a short phrase. Describe the nature of the experience required for the job position (e.g., responsibilities, seniority level, or related skills)",
+            "llm_parameters": {
+              "top_k": 30,
+              "top_p": 0.7,
+              "temperature": 0.4,
+              "max_new_tokens": 200,
+              "min_new_tokens": 50,
+              "stop_sequences": [
+                "Human",
+                "AI"
+              ]
+            },
+            "prompt_examples": [],
+            "error_handler_config": {
+              "max_retries": 0,
+              "error_message": "Something went wrong while running 'Generative prompt'",
+              "retry_interval": 1000
+            },
+            "include_agent_context": false
+          },
+          "input_map": {
+            "spec": {
+              "maps": [],
+              "name": "",
+              "fallback_strategy": "ask_the_user"
+            }
+          }
+        }
+      },
+      "schemas": {}
+    }
+  },
+  "schemas": {},
+  "metadata": {
+    "llm_model": "watsonx/meta-llama/llama-3-3-70b-instruct",
+    "source_kind": "ui",
+    "is_system_generated_description": false
+  },
+  "output_map": {
+    "spec": {
+      "maps": [],
+      "name": "",
+      "fallback_strategy": "ask_the_user"
+    }
+  }
+}
