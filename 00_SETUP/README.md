@@ -7,7 +7,6 @@ This guide provides step-by-step instructions to set up your development environ
 3. Install dependencies
 4. Register and provision a watsonx Orchestrate free trial
 5. Activate your watsonx Orchestrate environment 
-6. Set up third-party models
 
 
 ## 1. Installing VS code (Only for the coding lab)
