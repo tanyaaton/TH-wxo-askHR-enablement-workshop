@@ -52,7 +52,6 @@ Always use the tavily search tools for every user questions. Do not use your own
 Test the agent with the following question
 
 - เมืองหลวงของประเทศไทยคืออะไร
-- การกระทำใดบ้างที่ถือว่าเป็นการใช้การลาในทางที่ผิด
 - ช่วยลิสคำถามที่มักถูกถามตอนสัมภาษณ์งานหน่อย
 
 
