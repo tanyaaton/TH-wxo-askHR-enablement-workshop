@@ -8,3 +8,4 @@ __pycache__/
 _backup/
 set_connection_creds.sh
 venv
+export/
